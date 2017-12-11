@@ -1,0 +1,28 @@
+create database kongfu;
+use kongfu;
+
+create table memu
+(memuId varchar(50) primary key,
+memuName varchar(255) not null,
+memuPrice double not null,
+memuImageUrl varchar(255));
+
+create table user(
+id varchar(50) primary key,
+phone varchar(20),
+password varchar(50)
+);
+
+create table address(
+addressId varchar(50) primary key,
+city varchar(20) not null,
+plot varchar(255) not null,
+ address varchar(255) not null,
+ linkMan varchar(50),
+ phone varchar(20),
+ userId varchar(50),
+ foreign key(userId) references user(id)
+);
+
+
+
