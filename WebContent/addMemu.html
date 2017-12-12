@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/addmemu/bootstrap.min.css" rel="stylesheet">
+    <link href="css/addmemu/base.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="css/addmemu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="css/addmemu/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/addmemu/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/addmemu/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+    <link href="css/addmemu/boot-crm.css" rel="stylesheet"
+          type="text/css">
+    <!-- jQuery -->
+    <script src="js/addmemu/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/addmemu/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="js/addmemu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="js/addmemu/jquery.dataTables.min.js"></script>
+    <script src="js/addmemu/dataTables.bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/addmemu/sb-admin-2.js"></script>
+
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+    
+    <script type="text/javascript">
+  	//定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组    
+	var category = [ [ "新品-超值双人餐", "新品-早餐", "新品-特惠饮料", "新品-栗子焖土鸡饭" ], [ "新品-早餐", "套餐营养配", "米粉、米线", "包点","粥","饮品" ],
+			[ "栗子焖土鸡饭", "鲜香云耳土鸡饭", "超值双人餐", "豪满足套餐","排骨拼鸡腿肉饭","鲜剁冬菇肉饼饭","冬(香)菇鸡腿肉饭","酸菜卤肉饭","鲜辣排骨饭","榨菜牛肉饭","鱼香茄子饭","米粉、米线","蒸汤","小吃/配菜/米饭"],
+			[ "套餐", "米粉、米线", "小吃","饮品" ]];
+	function getCategory() {
+		//获得省份下拉框的对象    
+		var sltC1 = document.form.categort_1;
+		//获得城市下拉框的对象    
+		var sltC2 = document.form.categort_2;
+		//得到对应省份的城市数组    
+		var selectCategory = category[sltC1.selectedIndex - 1];
+		//清空城市下拉框，仅留提示选项    
+		sltC2.length = 1;
+		//将城市数组中的值填充到城市下拉框中    
+		for (var i = 0; i < selectCategory.length; i++) {
+			sltC2[i + 1] = new Option(selectCategory[i], selectCategory[i]);
+		}
+		
+	}
+    
+    </script>  
+</head>
+<body>
+    <div class="row clearfix top" style="margin-top: 20px">
+        <div class="col-md-12 column">																					
+            <form name="form" class="form-horizontal" role="form" action="memu/addMemu.action" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-1 control-label">菜单名称</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="name" class="form-control" id="inputEmail3" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-1 control-label">菜单价格</label>
+                    <div class="col-sm-4">
+                        <input type="number" name="price" class="form-control" id="inputPassword3" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="category" class="col-sm-1 control-label">所属类别</label>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-6 control-label">
+                                <select class="form-control" name="categort_1" id="category" onchange="getCategory()">
+                                    <option VALUE="0">请选择</option>
+									<option VALUE="精美早餐">热卖</option>
+									<option VALUE="丰富主食">营养早餐</option>
+									<option VALUE="小吃夜宵">丰富主食</option>
+									<option VALUE="日韩料理">轻松下午茶</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 control-label">
+                                <select name="categort_2" class="form-control">
+
+                                    <option>请选择</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="desc" class="col-sm-1 control-label">菜单图片</label>
+                    <div class="col-sm-4">
+                        <input name="uploadimage" type="file" height="40px" id="upload"  class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="desc" class="col-sm-1 control-label">菜单描述</label>
+                    <div class="col-sm-4">
+                        <textarea name="description" id="desc" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button type="submit" class="btn btn-default">添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -6,6 +6,15 @@ public class Memu {
 	private String memuName;
 	private Double memuPrice;
 	private String memuImageUrl;
+	private String categoryId;
+	
+	public String getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+	
 	public String getMemuId() {
 		return memuId;
 	}

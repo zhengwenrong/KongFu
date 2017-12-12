@@ -24,5 +24,11 @@ plot varchar(255) not null,
  foreign key(userId) references user(id)
 );
 
+create table category(
+categoryId int auto_increment primary key,
+parantcategory varchar(50) not null,
+categoryname varchar(255) not null,
+);
+
 
 
