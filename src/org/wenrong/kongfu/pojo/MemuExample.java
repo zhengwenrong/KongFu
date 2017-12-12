@@ -373,6 +373,66 @@ public class MemuExample {
             addCriterion("memuImageUrl not between", value1, value2, "memuimageurl");
             return (Criteria) this;
         }
+
+        public Criteria andMemucategoryIsNull() {
+            addCriterion("memuCategory is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryIsNotNull() {
+            addCriterion("memuCategory is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryEqualTo(Integer value) {
+            addCriterion("memuCategory =", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryNotEqualTo(Integer value) {
+            addCriterion("memuCategory <>", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryGreaterThan(Integer value) {
+            addCriterion("memuCategory >", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryGreaterThanOrEqualTo(Integer value) {
+            addCriterion("memuCategory >=", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryLessThan(Integer value) {
+            addCriterion("memuCategory <", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryLessThanOrEqualTo(Integer value) {
+            addCriterion("memuCategory <=", value, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryIn(List<Integer> values) {
+            addCriterion("memuCategory in", values, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryNotIn(List<Integer> values) {
+            addCriterion("memuCategory not in", values, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryBetween(Integer value1, Integer value2) {
+            addCriterion("memuCategory between", value1, value2, "memucategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andMemucategoryNotBetween(Integer value1, Integer value2) {
+            addCriterion("memuCategory not between", value1, value2, "memucategory");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

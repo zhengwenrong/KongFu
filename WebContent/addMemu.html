@@ -42,12 +42,12 @@
             background-color: #fff;
         }
     </style>
-    
+                                                  
     <script type="text/javascript">
   	//定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组    
 	var category = [ [ "新品-超值双人餐", "新品-早餐", "新品-特惠饮料", "新品-栗子焖土鸡饭" ], [ "新品-早餐", "套餐营养配", "米粉、米线", "包点","粥","饮品" ],
 			[ "栗子焖土鸡饭", "鲜香云耳土鸡饭", "超值双人餐", "豪满足套餐","排骨拼鸡腿肉饭","鲜剁冬菇肉饼饭","冬(香)菇鸡腿肉饭","酸菜卤肉饭","鲜辣排骨饭","榨菜牛肉饭","鱼香茄子饭","米粉、米线","蒸汤","小吃/配菜/米饭"],
-			[ "套餐", "米粉、米线", "小吃","饮品" ]];
+			[ "套餐", "米粉、米线", "小吃","饮品" ]];//轻松下午茶
 	function getCategory() {
 		//获得省份下拉框的对象    
 		var sltC1 = document.form.categort_1;
@@ -73,13 +73,13 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-1 control-label">菜单名称</label>
                     <div class="col-sm-4">
-                        <input type="text" name="name" class="form-control" id="inputEmail3" />
+                        <input type="text" name="memuName" class="form-control" id="inputEmail3" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-1 control-label">菜单价格</label>
                     <div class="col-sm-4">
-                        <input type="number" name="price" class="form-control" id="inputPassword3" />
+                        <input type="number" name="memuPrice" class="form-control" id="inputPassword3" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -109,14 +109,7 @@
                 <div class="form-group">
                     <label for="desc" class="col-sm-1 control-label">菜单图片</label>
                     <div class="col-sm-4">
-                        <input name="uploadimage" type="file" height="40px" id="upload"  class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="desc" class="col-sm-1 control-label">菜单描述</label>
-                    <div class="col-sm-4">
-                        <textarea name="description" id="desc" class="form-control"></textarea>
+                        <input name="memuImg" type="file" height="40px" id="upload"  class="form-control">
                     </div>
                 </div>
 

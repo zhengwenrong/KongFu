@@ -1,47 +1,66 @@
 package org.wenrong.kongfu.pojo;
 
 public class Memu {
+    private String memuid;
 
-	private String memuId;
-	private String memuName;
-	private Double memuPrice;
-	private String memuImageUrl;
-	private String categoryId;
-	
-	public String getCategoryId() {
-		return categoryId;
+    private String memuname;
+
+    private Double memuprice;
+
+    private String memuimageurl;
+
+    /**
+     * 外键 Category表的Id列
+     */
+    private Integer memucategory;
+    
+    private Category category;
+ 
+    public Category getCategory() {
+		return category;
 	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	
-	public String getMemuId() {
-		return memuId;
-	}
-	public void setMemuId(String memuId) {
-		this.memuId = memuId;
-	}
-	public String getMemuName() {
-		return memuName;
-	}
-	public void setMemuName(String memuName) {
-		this.memuName = memuName;
-	}
-	
-	public Double getMemuPrice() {
-		return memuPrice;
-	}
-	public void setMemuPrice(Double memuPrice) {
-		this.memuPrice = memuPrice;
-	}
-	public String getMemuImageUrl() {
-		return memuImageUrl;
-	}
-	public void setMemuImageUrl(String memuImageUrl) {
-		this.memuImageUrl = memuImageUrl;
-	}
-	
-	
-	
-	
+
+	public String getMemuid() {
+        return memuid;
+    }
+
+    public void setMemuid(String memuid) {
+        this.memuid = memuid == null ? null : memuid.trim();
+    }
+
+    public String getMemuname() {
+        return memuname;
+    }
+
+    public void setMemuname(String memuname) {
+        this.memuname = memuname == null ? null : memuname.trim();
+    }
+
+    public Double getMemuprice() {
+        return memuprice;
+    }
+
+    public void setMemuprice(Double memuprice) {
+        this.memuprice = memuprice;
+    }
+
+    public String getMemuimageurl() {
+        return memuimageurl;
+    }
+
+    public void setMemuimageurl(String memuimageurl) {
+        this.memuimageurl = memuimageurl == null ? null : memuimageurl.trim();
+    }
+
+    public Integer getMemucategory() {
+        return memucategory;
+    }
+
+    public void setMemucategory(Integer memucategory) {
+        this.memucategory = memucategory;
+    }
 }

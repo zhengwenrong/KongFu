@@ -2,13 +2,14 @@ package org.wenrong.kongfu.pojo;
 
 public class Category {
 
-	private String categoryId;
+	private Integer categoryId;
 	private String parantcategory;
 	private String categoryname;
-	public String getCategoryId() {
+	
+	public Integer getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
 	public String getParantcategory() {

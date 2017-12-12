@@ -13,10 +13,7 @@
         <mvc:annotation-driven/>
 	
 		<!-- 视图解释器 -->
-        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        	<property name="prefix" value="/WEB-INF/jsp/"/>
-        	<property name="suffix" value=".jsp"/>
-        </bean>
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 
 		<!-- 文件上传解析器  -->
         <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

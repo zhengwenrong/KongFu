@@ -5,13 +5,17 @@ create table memu
 (memuId varchar(50) primary key,
 memuName varchar(255) not null,
 memuPrice double not null,
-memuImageUrl varchar(255));
+memuImageUrl varchar(255),
+memuCategory integer ,
+foreign key(memuCategory) references category(categoryId)
+);
 
 create table user(
 id varchar(50) primary key,
 phone varchar(20),
 password varchar(50)
 );
+
 
 create table address(
 addressId varchar(50) primary key,
