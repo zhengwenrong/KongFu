@@ -48,7 +48,7 @@ public class MemuController {
 		Integer categoryId = categoryService.getCategoryId(category);
 		
 		//获取保存上传菜单图片的文件夹
-		String savePath = request.getSession().getServletContext().getRealPath("/uploadMemuImgs");
+		String savePath = request.getSession().getServletContext().getRealPath("/uploadMemuImg");
 			
 		String originalFilename = memuImg.getOriginalFilename();
 		String ext = originalFilename.substring(originalFilename.lastIndexOf("."));
@@ -59,7 +59,7 @@ public class MemuController {
 		Memu memu = new Memu();
 		
 		memu.setMemucategory(categoryId);
-		memu.setMemuimageurl("uploadMemuImgs/"+fileName);
+		memu.setMemuimageurl("uploadMemuImg/"+fileName);
 		
 		memu.setMemuid(UUIDUtils.getRandomStr());
 		memu.setMemuname(memuName);
