@@ -65,7 +65,6 @@ public class MemuController {
 		memu.setMemuname(memuName);
 		memu.setMemuprice(Double.parseDouble(memuPrice));
 		memuService.addMemu(memu);
-		System.out.println();
 		return "redirect:../addMemu.html";
 		
 	}

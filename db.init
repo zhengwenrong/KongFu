@@ -12,8 +12,16 @@ foreign key(memuCategory) references category(categoryId)
 
 create table user(
 id varchar(50) primary key,
-phone varchar(20),
-password varchar(50)
+phone varchar(20) not null,
+password varchar(50) not null,
+name varchar(50),
+gender varchar(10),
+birthday datetime,
+email varchar(50),
+province varchar(50),
+city varchar(50),
+interest varchar(255),
+tag varchar(255)
 );
 
 
