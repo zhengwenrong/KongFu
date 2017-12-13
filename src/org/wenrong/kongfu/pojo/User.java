@@ -13,7 +13,7 @@ public class User {
 
     private String gender;
 
-    private Date birthday;
+    private String birthday;
 
     private String email;
 
@@ -28,8 +28,13 @@ public class User {
     public String getId() {
         return id;
     }
+ 
+    public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public void setId(String id) {
+	public void setId(String id) {
         this.id = id == null ? null : id.trim();
     }
 
@@ -65,15 +70,16 @@ public class User {
         this.gender = gender == null ? null : gender.trim();
     }
 
-    public Date getBirthday() {
-        return birthday;
-    }
+  
+    public String getBirthday() {
+		return birthday;
+	}
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
 
-    public String getEmail() {
+	public String getEmail() {
         return email;
     }
 

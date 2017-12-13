@@ -1,5 +1,7 @@
 package org.wenrong.kongfu.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.wenrong.kongfu.pojo.ResultPojo;
 import org.wenrong.kongfu.pojo.User;
 
@@ -22,5 +24,11 @@ public interface UserService {
 	 * @return 
 	 */
 	public ResultPojo isPhoneAvailable(String phone);
+	
+	/**
+	 * 更新用户
+	 * @return
+	 */
+	public ResultPojo updateUser(HttpServletRequest request);
 	
 }

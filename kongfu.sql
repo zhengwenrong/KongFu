@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2017-12-12 14:03:51
+Date: 2017-12-13 13:55:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -88,7 +88,10 @@ CREATE TABLE `memu` (
   `memuName` varchar(255) NOT NULL,
   `memuPrice` double NOT NULL,
   `memuImageUrl` varchar(255) default NULL,
-  PRIMARY KEY  (`memuId`)
+  `memuCategory` int(11) default NULL,
+  PRIMARY KEY  (`memuId`),
+  KEY `memuCategory` (`memuCategory`),
+  CONSTRAINT `memu_ibfk_1` FOREIGN KEY (`memuCategory`) REFERENCES `category` (`categoryId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -101,11 +104,20 @@ CREATE TABLE `memu` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` varchar(50) NOT NULL,
-  `phone` varchar(20) default NULL,
-  `password` varchar(50) default NULL,
+  `phone` varchar(20) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name` varchar(50) default NULL,
+  `gender` varchar(10) default NULL,
+  `birthday` varchar(50) default NULL,
+  `email` varchar(50) default NULL,
+  `province` varchar(50) default NULL,
+  `city` varchar(50) default NULL,
+  `interest` varchar(255) default NULL,
+  `tag` varchar(255) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('20d7025b4ec34484b237d2a9965ecd65', '15018159367', '123', '文荣', '男', '2017-12-01', '234', '广东', '阳江', '清淡-浓重-滋补', '鲁菜-苏菜-闽菜');

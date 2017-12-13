@@ -1,5 +1,9 @@
 package org.wenrong.kongfu.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.wenrong.kongfu.pojo.ResultPojo;
 import org.wenrong.kongfu.pojo.User;
 import org.wenrong.kongfu.service.UserService;
+import org.wenrong.kongfu.utils.ArrayUtils;
 import org.wenrong.kongfu.utils.CheckPhoneUtils;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
@@ -66,9 +70,11 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value="/updateUser.action",produces="text/html;charset=UTF-8;")
-	public String updateUser(@RequestBody String params) {
+	public String updateUser(HttpServletRequest request) throws UnsupportedEncodingException {
 		
-		return "";
+		ResultPojo updateUser = userService.updateUser(request);
+	
+		return JSON.toJSONString(updateUser);
 	}
 	
 }
