@@ -1,5 +1,7 @@
 package org.wenrong.kongfu.dao;
 
+import java.util.List;
+
 import org.wenrong.kongfu.pojo.Category;
 
 public interface CategoryMapper {
@@ -10,5 +12,12 @@ public interface CategoryMapper {
 	 * @return
 	 */
 	public Integer getCategoryId(Category category);
+	
+	/**
+	 * 
+	 * @param parentCategory
+	 * @return
+	 */
+	public List<Category> getCategoryByParentCategory(String parentCategory);
 	
 }

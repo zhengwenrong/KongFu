@@ -5,6 +5,9 @@
 	<select id="getCategoryId" parameterType="category" resultType="Integer">
 		select categoryId from category where parantcategory=#{parantcategory} and categoryname=#{categoryname}
 	</select>
-
+	
+	<select id="getCategoryByParentCategory" parameterType="String" resultType="Category">
+		select * from category where parantcategory=#{name}
+	</select>
 
 </mapper>
