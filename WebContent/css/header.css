@@ -1,0 +1,201 @@
+
+/* 顶部 begin */
+
+.top {
+
+    height: 74px;
+    border-bottom: 3px solid #E60012;
+}
+
+.top .logo {
+    
+    float: left;
+    margin-top: 13px;
+    margin-left: 150px;
+}
+
+
+
+/* 定位  */
+.top .location {
+
+    float: left;
+    margin-top: 40px;
+    margin-left: 25px;
+    position: relative;
+
+}
+.top .location>div {
+
+    float: left;
+
+}
+
+.top .location>div:nth-child(1) .icon-map {
+
+    color: #E60012;
+
+}
+
+.top .location>div:nth-child(1) span {
+
+    color: #e60012;
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 7px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.top .location>div:nth-child(2) input {
+
+    background-color: #E60012;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: "Microsoft YaHei UI";
+    color: white;
+
+}
+
+.top .location>div:nth-child(2) input:hover {
+    background-color: #F1737D;
+
+}
+
+/* 登录 和 标题栏  */
+.top .top-right {
+
+    float: right;
+    height: 74px;
+    width: 800px;
+}
+
+.top .top-right>div:nth-child(1) {
+
+    margin-right: 150px;
+    margin-top: 18px;
+    float: right;
+    margin-right: 150px;
+
+}
+
+.top .top-right>div:nth-child(1) a{
+    padding: 7px;
+    color: #E60012;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.top .top-right>div:nth-child(1) span {
+
+    color: #E60012;
+
+}
+
+.top .top-right>div:nth-child(1) a:hover {
+
+
+    color: #F1737D;
+}
+
+.top .top-right>div:nth-child(2) {
+    margin-top: 44px;
+    height: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    background-color: #E60012;
+}
+
+.top .top-right>div:nth-child(2) ul>li>a {
+    color: #fff;
+}
+
+.top .top-right>div:nth-child(2) ul>li {
+    float: left;
+    font-size: 17px;
+    display: block;
+    height: 22px;
+    min-width: 63px;
+    padding: 0 25px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 25px;
+    border-right: 1px solid white;  
+	color: red!important;
+	margin-top: -3px;
+	margin-left: 2px;
+}
+
+.active:hover {
+	
+	background-color: #F8BFC3;
+	
+}
+
+.active {
+	
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+.activeA {
+	
+	color: #E60012!important;
+	cursor: pointer;
+}
+
+.top .top-right>div:nth-child(2) ul{
+	
+	margin-bottom: 10px;
+	
+}
+
+
+.top .top-right>div:nth-child(2) ul>li:nth-child(1) {
+
+    display: block;
+    width: 36px!important;
+    height: 29px!important;
+    position: absolute;
+    min-width: 36px;
+    padding: 0;
+    top: 0;
+    margin-top: 0;
+    margin-left:0;
+    left: 0;
+    background: url("../img/bgs.png") no-repeat -253px 0px;
+    border-right: 0px solid white;
+
+}
+
+.top .top-right>div:nth-child(2) ul>li:nth-child(3) {
+	
+	float: left;
+    font-size: 17px;
+    display: block;
+    height: 22px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 25px;
+    border-right: 1px solid white;  
+	color: white!important;	
+}
+
+.top .top-right>div:nth-child(2) ul>li:last-child {
+    border-right: 0px solid #E60012;
+
+}
+
+.top .top-right>div:nth-child(2) ul>li>a:hover {
+
+    color: #F1737D;
+
+}
+
+
+
+/* 顶部 end */

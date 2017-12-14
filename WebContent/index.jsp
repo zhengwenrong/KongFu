@@ -6,29 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Title</title>
-<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-<script src="js/jquery-1.12.4.min.js"></script>
-<script src="bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-	$(function() {
-
-		$(".menuaa li ").click(
-				function() {
-					// $(".onea").slideToggle().parent().siblings().find(".onea").slideUp();
-					$(this).find(".onea").slideDown().parent().siblings().find(
-							".onea").slideUp();
-
-				})
-
-		$(".menuaa li .onea li").click(function() {
-			alert("a")
-
-		})
-	})
-</script>
-</head>
-<style>
-* {
+<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+<style type="text/css">
+	* {
 	padding: 0;
 	margin: 0;
 }
@@ -145,7 +125,7 @@ a {
 .sidebar-left {
 	width: 253px;
 	position: absolute;
-	top: 56px;
+	top: 74px;
 	left: 186px;
 	z-index: 102;
 }
@@ -182,6 +162,7 @@ a {
 	width: 193px;
 	list-style: none;
 	list-style-image: none;
+	padding-bottom: 5px;
 }
 
 .menuaa li {
@@ -258,37 +239,234 @@ a {
 .tu {
 	margin-top: 20px;
 }
+
+.viewpager {
+	overflow: hidden;
+}
+
+.viewpager>img {
+	width: 100%;
+	height: 100%;
+	display: none;
+	float: left;
+}
+
+.viewpager>img:nth-child(1){
+	display:block;
+}
+
+.carousel-inner {
+	
+	position: relative;
+	
+}
+
+.points {
+	
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+}
+
+.points>i {
+	
+	display: block;
+	width: 10px;
+	margin-right:5px;
+	height: 10px;
+	float:left;
+	border-radius:10px;
+	cursor:pointer;
+	background-color: #626262;
+}
+
+.point-normal {
+	background-color: #626262;
+}
+
+.point-actived{
+	background-color: #E60012;
+}
+
+.points>i:hover {
+	
+	background-color: #E60012;
+	
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+
+
+
+
+	
 </style>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function() {
+
+		$(".menuaa li ").click(
+				function() {
+					// $(".onea").slideToggle().parent().siblings().find(".onea").slideUp();
+					$(this).find(".onea").slideDown().parent().siblings().find(
+							".onea").slideUp();
+
+				})
+
+		$(".menuaa li .onea li").click(function() {
+			alert("a")
+
+		})
+	});
+	
+	var imgUrls = ["img/pc-首页轮播－土鸡汤.jpg","img/栗子焖土鸡饭猪骨汤套配西兰花.jpg","img/20151105115329_4446_2.jpg"];
+	
+	var currentIndex = 0;
+	
+	function changImg(index){
+		
+		var $pic = $("#pic");
+		$pic.hide();
+		$pic.attr("src",imgUrls[index]);
+		$pic.fadeIn("slow");
+		currentIndex++;
+	}
+
+	window.setInterval("changImg(currentIndex%imgUrls.length)","3000");
+	
+	
+</script>
+
+	<style type="text/css">
+		.menuaa>li>a {
+		
+			display: block;
+			text-align: left;
+			line-height: 26px;
+			color:white;
+		}
+		
+		.menuaa>li:nth-child(1)>a {
+			
+			background:url("img/bgs.png") 0 -155px;
+			margin-top: 10px;
+			border-radius: 10px;
+			padding-left: 30px;
+		}
+		
+		.menuaa>li:nth-child(2)>a {
+		
+			background:url("img/bgs.png") 0 -182px;
+			margin-top: 10px;
+			border-radius: 10px;
+			padding-left: 30px;
+		}
+		
+		.menuaa>li:nth-child(3)>a {
+		
+			background:url("img/bgs.png") 0 -208px;
+			margin-top: 10px;
+			border-radius: 10px;
+			padding-left: 30px;
+		}
+		
+		.menuaa>li:nth-child(4)>a {
+			background:url("img/bgs.png") 0 -234px;
+			margin-top: 10px;
+			border-radius: 10px;
+			padding-left: 30px;
+		}
+		
+		.onea>li {
+			background-image: none;
+		    width: 100%;
+		    line-height: 21px;
+		    font-size: 15px;
+			margin-left: 20px;
+		}
+		
+		#sidebar-cart {
+			width: 184px;
+			background-color: #E60012;
+			border-radius: 20px;
+		}
+		
+		#sidebar-cart .title {
+			margin-top: 5px;
+		}
+		
+		#sidebar-cart .title>p:nth-child(1) {
+			
+			text-align: center;
+			font-size: 16px;
+			color:white;
+			cursor: pointer;
+		}
+		
+		#sidebar-cart .title>p>i {
+			margin-right: 5px;
+		}
+		
+		#sidebar-cart .cart-content {
+		
+			width: 180px;
+			height: 100px;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 10px;
+			margin-top: 5px;
+			overflow: hidden;
+		
+		}
+		
+		#sidebar-cart .cart-content .content-title {
+			
+			width: 170px;
+			background-color: #E60012;
+			margin: 0 auto;
+			border-radius: 10px;
+			text-align: center;
+			line-height: 20px;
+			color: white;
+			margin-top: 10px;
+			
+			
+		}
+		
+		#sidebar-cart .title {
+			position: relative;
+		}
+		
+		#moreunfold {
+		
+			position: absolute;
+			bottom: 5px;
+			left: 50%;
+		}
+		
+		
+	</style>
+
+</head>
+
 <body>
-
-	<div class="header">
-		<div class="headercenter">
-			<a href="#"><img id="logo" src="img/d679258.png"></a>
-
-
-			<div class="login">
-				<a href="#">登录</a> <span style="font-size: 18px; color: red">|</span>
-				<a href="#">注册</a>
-			</div>
-
-
-			<ul class="menu">
-				<li class="first"></li>
-				<li class=" menua "><a href="">首页</a></li>
-				<li class="line"></li>
-				<li class="menua"><a href="">订单查询</a></li>
-				<li class="line"></li>
-				<li class="menua"><a href="">会员中心</a></li>
-				<li class="line"></li>
-				<li class="menua"><a href="">帮助中心</a></li>
-			</ul>
-
-		</div>
-
-
-	</div>
-
-
+	
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<div class="container-fluid ">
 		<div id="mycarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -298,15 +476,10 @@ a {
 			</ol>
 			<div class="carousel-inner">
 
-				<div class="item  active">
-					<img src="img/pc-首页轮播－土鸡汤.jpg" alt="">
+				<div class="viewpager clearfix">
+					<img id="pic" src="img/pc-首页轮播－土鸡汤.jpg" alt="">
 				</div>
-				<div class="item ">
-					<img src="img/20151105115329_4446_2.jpg" alt="">
-				</div>
-				<div class="item ">
-					<img src="img/栗子焖土鸡饭猪骨汤套配西兰花.jpg" alt="">
-				</div>
+	
 			</div>
 
 
@@ -322,7 +495,7 @@ a {
 				<div class="content">
 					<ul class="menuaa">
 						<li><a href="#">热卖</a>
-							<ul class=" onea onea1">
+							<ul class="onea onea1">
 
 								<c:forEach items="${hot }" var="h">
 
@@ -333,7 +506,7 @@ a {
 							</ul>
 						</li>
 
-						<li><a href="#">热卖</a>
+						<li><a href="#">营养早餐  8:00-10:30</a>
 							<ul class="onea">
 
 								<c:forEach items="${breakfast }" var="h">
@@ -345,7 +518,7 @@ a {
 							</ul>
 						</li>
 
-						<li><a href="#">热卖</a>
+						<li><a href="#">丰富主食  10:30-22:00</a>
 							<ul class="onea">
 								<c:forEach items="${dinner }" var="h">
 
@@ -355,7 +528,7 @@ a {
 							</ul>
 						</li>
 
-						<li><a href="#">热卖</a>
+						<li><a href="#">轻松下午茶  14:00-17:00</a>
 							<ul class="onea">
 								<c:forEach items="${tea }" var="h">
 
@@ -371,48 +544,43 @@ a {
 		</div>
 
 		<!--购物车-->
-		<div id="sidebar-cart" data-toggle="modal" data-target="#myModal">
-			<div class="search"></div>
-			<div class="inner">
-				<a class="cart-info-close"></a>
+		<div id="sidebar-cart">
+			
+			<div class="title">
+				
+				<p><i class="iconfont icon-cart"></i>购物车</p>
+				
 			</div>
-		</div>
-		<!--模态框-->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h2 class="modal-title" style="text-align: center"
-							id="myModalLabel">购物车</h2>
-					</div>
-					<div class="modal-body">
-						<p>产品总额：</p>
-						<p>外送费：</p>
-						<p>应付金额：</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-					</div>
+			
+			<div class="cart-content">
+				
+				<div class="content-title">
+					<p>
+						<i class="iconfont icon-edit"></i>
+						订餐信息
+					</p>
 				</div>
+				
+				<p style="padding: 5px 10px;">下单<font color="red">45分钟</font>左右送达</p>
+				
+				<div >
+					
+					
+					
+					
+				</div>
+				
+			
 			</div>
+			
+						
 		</div>
-		<!--购物车-->
+		
 	</div>
 
 	<div class="tu">
 		<img src="img/IJ2KH_(_%7D)7VK5~4WJR_$~7.jpg">
 	</div>
-
-
-
-
-
 </body>
 </html>
 
