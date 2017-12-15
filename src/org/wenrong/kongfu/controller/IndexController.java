@@ -41,14 +41,11 @@ public class IndexController {
 		
 		List<Memu> memus = memuService.getAllMemuByCategoryId(Integer.parseInt(categoryId));
 		
-		
 		map.put("hot", allCategory.get("热卖"));
 		map.put("breakfast", allCategory.get("营养早餐"));
 		map.put("dinner", allCategory.get("丰富主食"));
-		map.put("tea", allCategory.get("轻松下午茶"));
-		
-		map.put("memus", memus);
-		
+		map.put("tea", allCategory.get("轻松下午茶"));	
+		map.put("memus", memus);		
 		
 		return "memus.jsp";
 	}

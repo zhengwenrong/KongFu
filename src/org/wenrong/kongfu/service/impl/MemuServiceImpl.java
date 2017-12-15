@@ -37,6 +37,16 @@ public class MemuServiceImpl implements MemuService{
 		return selectByExample;
 	}
 
+	@Override
+	public Memu getMemuById(String id) {
+
+		Memu memu = memuMapper.selectByPrimaryKey(id);
+		
+		
+		
+		return memu;
+	}
+
 	
 	
 	

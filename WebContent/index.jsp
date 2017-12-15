@@ -656,45 +656,30 @@ a {
 				</div>
 
 				<div class="enter-paypage">
-					<span></span>
+					<a href="pay.action"><span></span></a>
 				</div>
 
 				<h2 style="padding: 5px 10px;">购物车详情</h2>
 
 
-				<div class="cartItem clearfix">
+				<c:forEach items="${cart}" var="cartItem">
 
-					<div class="box-img">
-						<img src="img/logo.png" width="50px" height="50px">
+					<div class="cartItem clearfix">
+
+						<div class="box-img">
+							<img src="${cartItem.key.memuimageurl }" width="50px"
+								height="50px">
+						</div>
+
+						<div class="box-name">${cartItem.key.memuname }</div>
+
+						<div class="box-price">
+							<font color="red">￥${cartItem.key.memuprice }</font>
+						</div>
+
 					</div>
 
-					<div class="box-name">真功夫asdfsdafsdafasdf</div>
-
-					<div class="box-price">
-						<font color="red">￥20.00</font>
-					</div>
-
-
-				</div>
-
-
-				<div class="cartItem">
-
-					<div class="box-img">
-						<img src="img/logo.png" width="50px" height="50px">
-					</div>
-
-					<div class="box-name">真功夫asdfsdafsdafasdf</div>
-
-					<div class="box-price">
-						<font color="red">￥20.00</font>
-					</div>
-
-
-				</div>
-
-
-
+				</c:forEach>
 			</div>
 
 
@@ -706,5 +691,6 @@ a {
 		<img src="img/IJ2KH_(_%7D)7VK5~4WJR_$~7.jpg">
 	</div>
 </body>
+
 </html>
 

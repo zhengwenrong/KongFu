@@ -208,7 +208,7 @@ a {
 	position: absolute;
 	z-index: 102;
 	top: 100px;
-	padding-bottom:20px;
+	padding-bottom: 20px;
 	right: 173px;
 }
 
@@ -407,7 +407,7 @@ a {
 	border-radius: 10px;
 	margin-top: 5px;
 	overflow: hidden;
-	margin-top:10px;
+	margin-top: 10px;
 	display: none;
 	padding-bottom: 10px;
 }
@@ -447,9 +447,7 @@ a {
 	font-size: 13px;
 	margin-right: 10px;
 	line-height: 160%;
-	
 }
-
 
 .enter-paypage>span {
 	display: block;
@@ -473,7 +471,8 @@ a {
 
 .cartItem>div:nth-child(2) {
 	width: 40px;
-	font-size: 10px; overflow : hidden;
+	font-size: 10px;
+	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -487,8 +486,8 @@ a {
 	position: absolute;
 	bottom: 0px;
 	left: 50%;
-	cursor:pointer;
-	color:white;
+	cursor: pointer;
+	color: white;
 	font-weight: 700;
 	display: none;
 }
@@ -497,62 +496,55 @@ a {
 	position: absolute;
 	bottom: 0px;
 	left: 50%;
-	cursor:pointer;
-	color:white;
+	cursor: pointer;
+	color: white;
 	font-weight: 700;
 }
 
 .memus {
-
 	width: 560px;
 	margin: 20px auto;
-	
 }
 
 .list>li>div:nth-child(1) {
-
 	width: 180px;
 	height: 170px;
-	
 }
 
-.list .money>span:nth-child(1){
+.list .money>span:nth-child(1) {
 	float: left;
 	margin-top: 10px;
 	margin-left: 10px;
 }
-.list .money>span:nth-child(2){
+
+.list .money>span:nth-child(2) {
 	float: right;
 	display: block;
-	padding:3px 10px;
-	color:white;
+	padding: 3px 10px;
+	color: white;
 	background-color: #E60012;
 	border-radius: 20px;
 	margin-right: 5px;
 	margin-top: 10px;
 	cursor: pointer;
-	
 }
 
 .list .money>span:nth-child(2):hover {
 	background-color: pink;
 }
 
-
-
 .list>li>p {
 	text-align: center;
 	font-size: 14px;
-    color: #6a3301;
+	color: #6a3301;
 	padding: 6px 0;
 }
 
 .list>li {
-	float:left;
+	float: left;
 	margin-top: 10px;
 	margin-right: 6px;
 }
-
 </style>
 
 <script type="text/javascript">
@@ -617,40 +609,48 @@ a {
 
 								<c:forEach items="${hot }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
+									<li><a href="javaScript:void(0);"
+										onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
-								</c:forEach>
+						</c:forEach>
 
-							</ul></li>
+					</ul>
+					</li>
 
-						<li><a href="#">营养早餐 8:00-10:30</a>
-							<ul class="onea">
+					<li><a href="#">营养早餐 8:00-10:30</a>
+						<ul class="onea">
 
-								<c:forEach items="${breakfast }" var="h">
+							<c:forEach items="${breakfast }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
+								<li><a href="javaScript:void(0);"
+									onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
-								</c:forEach>
+					</c:forEach>
 
-							</ul></li>
+					</ul>
+					</li>
 
-						<li><a href="#">丰富主食 10:30-22:00</a>
-							<ul class="onea">
-								<c:forEach items="${dinner}" var="h">
+					<li><a href="#">丰富主食 10:30-22:00</a>
+						<ul class="onea">
+							<c:forEach items="${dinner}" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
+								<li><a href="javaScript:void(0);"
+									onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
-								</c:forEach>
-							</ul></li>
+					</c:forEach>
+					</ul>
+					</li>
 
-						<li><a href="#">轻松下午茶 14:00-17:00</a>
-							<ul class="onea">
-								<c:forEach items="${tea }" var="h">
+					<li><a href="#">轻松下午茶 14:00-17:00</a>
+						<ul class="onea">
+							<c:forEach items="${tea }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
+								<li><a href="javaScript:void(0);"
+									onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
-								</c:forEach>
-							</ul></li>
+					</c:forEach>
+					</ul>
+					</li>
 					</ul>
 				</div>
 				<div class="bottom"></div>
@@ -668,8 +668,8 @@ a {
 
 			</div>
 
-			<i id="shou" onclick="upCart()" class="iconfont icon-less"></i>
-			<i id="fang" onclick="downCart()" class="iconfont icon-moreunfold"></i>
+			<i id="shou" onclick="upCart()" class="iconfont icon-less"></i> <i
+				id="fang" onclick="downCart()" class="iconfont icon-moreunfold"></i>
 
 
 			<div id="cart-detail" class="cart-content">
@@ -687,7 +687,7 @@ a {
 				<div class="cart-info">
 
 					<div class="clearfix">
-						<span>餐品总额:</span> <span>0元</span>
+						<span>餐品总额:</span> <span>${totalMomey }元</span>
 					</div>
 
 					<div class="clearfix">
@@ -695,56 +695,57 @@ a {
 					</div>
 
 					<div class="clearfix">
-						<span>外送费:</span> <span>0元</span>
+						<span>外送费:</span> <span> <c:if test="${not empty cart }">
+						5元		
+						</c:if> <c:if test="${empty cart }">
+						0元
+						</c:if>
+
+						</span>
+
+
+
 					</div>
 
 					<div class="clearfix">
 						<span><font color="red">应付金额:</font></span> <span><font
-							color="red">0元</font></span>
+							color="red"> <c:if test="${not empty cart }">
+							
+							${totalMomey + 5}元
+							
+							</c:if> <c:if test="${empty cart }">
+								0元
+							</c:if>
+
+						</font></span>
 					</div>
 
 				</div>
 
 				<div class="enter-paypage">
-					<span></span>
+					<span onclick="enterPayPage()"></span>
 				</div>
 
 				<h2 style="padding: 5px 10px;">购物车详情</h2>
 
+				<c:forEach items="${cart}" var="cartItem">
 
-				<div class="cartItem clearfix">
+					<div class="cartItem clearfix">
 
-					<div class="box-img">
-						<img src="img/logo.png" width="50px" height="50px">
+						<div class="box-img">
+							<img src="${cartItem.key.memuimageurl }" width="50px"
+								height="50px">
+						</div>
+
+						<div class="box-name">${cartItem.key.memuname }</div>
+
+						<div class="box-price">
+							<font color="red">￥${cartItem.key.memuprice }</font>
+						</div>
+
 					</div>
 
-					<div class="box-name">真功夫asdfsdafsdafasdf</div>
-
-					<div class="box-price">
-						<font color="red">￥20.00</font>
-					</div>
-
-
-				</div>
-
-
-				<div class="cartItem">
-
-					<div class="box-img">
-						<img src="img/logo.png" width="50px" height="50px">
-					</div>
-
-					<div class="box-name">真功夫asdfsdafsdafasdf</div>
-
-					<div class="box-price">
-						<font color="red">￥20.00</font>
-					</div>
-
-
-				</div>
-
-
-
+				</c:forEach>
 			</div>
 
 
@@ -753,30 +754,41 @@ a {
 	</div>
 
 	<div class="memus clearfix">
-	
+
 		<ul class="list">
-		
-		<c:forEach items="${memus }" var="memu">
-			<li class="clearfix">
-				
-				<div>
-					<img src="${memu.memuimageurl }" width="180px" height="170px">
-				</div>
-				<p>${memu.memuname}</p>
-				<div class="money">
-					<span><span style="font-size: 14px;color:#E60012;">￥</span><span color="#E60012" style="font-size: 22px;color:#E60012;">${memu.memuprice }</span></span>
-					<span>立即购买</span>
-				</div>
-			</li>
-		</c:forEach>
-			
-		
+
+			<c:forEach items="${memus }" var="memu">
+				<li class="clearfix">
+
+					<div>
+						<img src="${memu.memuimageurl }" width="180px" height="170px">
+					</div>
+					<p>${memu.memuname}</p>
+					<div class="money">
+						<span><span style="font-size: 14px; color: #E60012;">￥</span><span
+							color="#E60012" style="font-size: 22px; color: #E60012;">${memu.memuprice }</span></span>
+						<span onclick="add2cart('${memu.memuid}',${memu.memucategory })">立即购买</span>
+					</div>
+				</li>
+			</c:forEach>
+
+
 		</ul>
-		
+
 	</div>
 
 	<jsp:include page="bottom.html"></jsp:include>
-	
+
 </body>
+
+<script type="text/javascript">
+	function add2cart(memuid,categoryId){
+		
+		window.location = "addMemuToCart.action?memuid="+memuid+"&categoryId="+categoryId;
+		
+	}
+
+</script>
+
 </html>
 

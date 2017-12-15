@@ -19,4 +19,11 @@ public interface MemuService {
 	 */
 	public List<Memu> getAllMemuByCategoryId(Integer categoryId);
 	
+	/**
+	 * 通过MemuId获取Memu
+	 * @param id
+	 * @return
+	 */
+	public Memu getMemuById(String id);
+	
 }

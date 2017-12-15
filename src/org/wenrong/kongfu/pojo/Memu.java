@@ -63,4 +63,31 @@ public class Memu {
     public void setMemucategory(Integer memucategory) {
         this.memucategory = memucategory;
     }
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((memuid == null) ? 0 : memuid.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Memu other = (Memu) obj;
+		if (memuid == null) {
+			if (other.memuid != null)
+				return false;
+		} else if (!memuid.equals(other.memuid))
+			return false;
+		return true;
+	}
+    
+    
 }
