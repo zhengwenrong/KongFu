@@ -316,10 +316,6 @@ a {
 
 				})
 
-		$(".menuaa li .onea li").click(function() {
-			alert("a")
-
-		})
 	});
 
 	var imgUrls = [ "img/pc-首页轮播－土鸡汤.jpg", "img/栗子焖土鸡饭猪骨汤套配西兰花.jpg",
@@ -337,9 +333,6 @@ a {
 	}
 
 	window.setInterval("changImg(currentIndex%imgUrls.length)", "5000");
-	
-	
-	
 </script>
 
 <style type="text/css">
@@ -454,7 +447,9 @@ a {
 	font-size: 13px;
 	margin-right: 10px;
 	line-height: 160%;
+	
 }
+
 
 .enter-paypage>span {
 	display: block;
@@ -507,6 +502,57 @@ a {
 	font-weight: 700;
 }
 
+.memus {
+
+	width: 560px;
+	margin: 20px auto;
+	
+}
+
+.list>li>div:nth-child(1) {
+
+	width: 180px;
+	height: 170px;
+	
+}
+
+.list .money>span:nth-child(1){
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.list .money>span:nth-child(2){
+	float: right;
+	display: block;
+	padding:3px 10px;
+	color:white;
+	background-color: #E60012;
+	border-radius: 20px;
+	margin-right: 5px;
+	margin-top: 10px;
+	cursor: pointer;
+	
+}
+
+.list .money>span:nth-child(2):hover {
+	background-color: pink;
+}
+
+
+
+.list>li>p {
+	text-align: center;
+	font-size: 14px;
+    color: #6a3301;
+	padding: 6px 0;
+}
+
+.list>li {
+	float:left;
+	margin-top: 10px;
+	margin-right: 6px;
+}
+
 </style>
 
 <script type="text/javascript">
@@ -534,7 +580,6 @@ a {
 		window.location="${pageContext.request.contextPath}/listProduct.action?categoryId="+categoryId;
 		
 	}
-	
 </script>
 </head>
 
@@ -572,7 +617,7 @@ a {
 
 								<c:forEach items="${hot }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
 								</c:forEach>
 
@@ -583,7 +628,7 @@ a {
 
 								<c:forEach items="${breakfast }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
 								</c:forEach>
 
@@ -593,7 +638,7 @@ a {
 							<ul class="onea">
 								<c:forEach items="${dinner}" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
 								</c:forEach>
 							</ul></li>
@@ -602,7 +647,7 @@ a {
 							<ul class="onea">
 								<c:forEach items="${tea }" var="h">
 
-									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li></li>
 
 								</c:forEach>
 							</ul></li>
@@ -707,9 +752,31 @@ a {
 
 	</div>
 
-	<div class="tu">
-		<img src="img/IJ2KH_(_%7D)7VK5~4WJR_$~7.jpg">
+	<div class="memus clearfix">
+	
+		<ul class="list">
+		
+		<c:forEach items="${memus }" var="memu">
+			<li class="clearfix">
+				
+				<div>
+					<img src="${memu.memuimageurl }" width="180px" height="170px">
+				</div>
+				<p>${memu.memuname}</p>
+				<div class="money">
+					<span><span style="font-size: 14px;color:#E60012;">￥</span><span color="#E60012" style="font-size: 22px;color:#E60012;">${memu.memuprice }</span></span>
+					<span>立即购买</span>
+				</div>
+			</li>
+		</c:forEach>
+			
+		
+		</ul>
+		
 	</div>
+
+	<jsp:include page="bottom.html"></jsp:include>
+	
 </body>
 </html>
 

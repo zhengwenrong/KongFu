@@ -25,6 +25,8 @@ public class CategoryController {
 		
 		Map<String, List<Category>> allCategory = categoryService.getAllCategory();
 	
+		
+		
 		return JSON.toJSONString(allCategory);
 	}
 	

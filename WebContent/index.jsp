@@ -8,7 +8,7 @@
 <title>Title</title>
 <link rel="stylesheet" type="text/css" href="css/iconfont.css">
 <style type="text/css">
-	* {
+* {
 	padding: 0;
 	margin: 0;
 }
@@ -208,6 +208,7 @@ a {
 	position: absolute;
 	z-index: 102;
 	top: 100px;
+	padding-bottom:20px;
 	right: 173px;
 }
 
@@ -251,32 +252,28 @@ a {
 	float: left;
 }
 
-.viewpager>img:nth-child(1){
-	display:block;
+.viewpager>img:nth-child(1) {
+	display: block;
 }
 
 .carousel-inner {
-	
 	position: relative;
-	
 }
 
 .points {
-	
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
 }
 
 .points>i {
-	
 	display: block;
 	width: 10px;
-	margin-right:5px;
+	margin-right: 5px;
 	height: 10px;
-	float:left;
-	border-radius:10px;
-	cursor:pointer;
+	float: left;
+	border-radius: 10px;
+	cursor: pointer;
 	background-color: #626262;
 }
 
@@ -284,34 +281,26 @@ a {
 	background-color: #626262;
 }
 
-.point-actived{
+.point-actived {
 	background-color: #E60012;
 }
 
 .points>i:hover {
-	
 	background-color: #E60012;
-	
 }
 
 .clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
+	content: "";
+	display: table;
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 .clearfix {
-    *zoom: 1; /*IE/7/6*/
+	*zoom: 1; /*IE/7/6*/
 }
-
-
-
-
-
-	
 </style>
 
 <script src="js/jquery-1.12.4.min.js"></script>
@@ -332,141 +321,227 @@ a {
 
 		})
 	});
-	
-	var imgUrls = ["img/pc-首页轮播－土鸡汤.jpg","img/栗子焖土鸡饭猪骨汤套配西兰花.jpg","img/20151105115329_4446_2.jpg"];
-	
+
+	var imgUrls = [ "img/pc-首页轮播－土鸡汤.jpg", "img/栗子焖土鸡饭猪骨汤套配西兰花.jpg",
+			"img/20151105115329_4446_2.jpg" ];
+
 	var currentIndex = 0;
-	
-	function changImg(index){
-		
+
+	function changImg(index) {
+
 		var $pic = $("#pic");
 		$pic.hide();
-		$pic.attr("src",imgUrls[index]);
+		$pic.attr("src", imgUrls[index]);
 		$pic.fadeIn("slow");
 		currentIndex++;
 	}
 
-	window.setInterval("changImg(currentIndex%imgUrls.length)","3000");
+	window.setInterval("changImg(currentIndex%imgUrls.length)", "5000");
+	
 	
 	
 </script>
 
-	<style type="text/css">
-		.menuaa>li>a {
-		
-			display: block;
-			text-align: left;
-			line-height: 26px;
-			color:white;
-		}
-		
-		.menuaa>li:nth-child(1)>a {
-			
-			background:url("img/bgs.png") 0 -155px;
-			margin-top: 10px;
-			border-radius: 10px;
-			padding-left: 30px;
-		}
-		
-		.menuaa>li:nth-child(2)>a {
-		
-			background:url("img/bgs.png") 0 -182px;
-			margin-top: 10px;
-			border-radius: 10px;
-			padding-left: 30px;
-		}
-		
-		.menuaa>li:nth-child(3)>a {
-		
-			background:url("img/bgs.png") 0 -208px;
-			margin-top: 10px;
-			border-radius: 10px;
-			padding-left: 30px;
-		}
-		
-		.menuaa>li:nth-child(4)>a {
-			background:url("img/bgs.png") 0 -234px;
-			margin-top: 10px;
-			border-radius: 10px;
-			padding-left: 30px;
-		}
-		
-		.onea>li {
-			background-image: none;
-		    width: 100%;
-		    line-height: 21px;
-		    font-size: 15px;
-			margin-left: 20px;
-		}
-		
-		#sidebar-cart {
-			width: 184px;
-			background-color: #E60012;
-			border-radius: 20px;
-		}
-		
-		#sidebar-cart .title {
-			margin-top: 5px;
-		}
-		
-		#sidebar-cart .title>p:nth-child(1) {
-			
-			text-align: center;
-			font-size: 16px;
-			color:white;
-			cursor: pointer;
-		}
-		
-		#sidebar-cart .title>p>i {
-			margin-right: 5px;
-		}
-		
-		#sidebar-cart .cart-content {
-		
-			width: 180px;
-			height: 100px;
-			background-color: white;
-			margin: 0 auto;
-			border-radius: 10px;
-			margin-top: 5px;
-			overflow: hidden;
-		
-		}
-		
-		#sidebar-cart .cart-content .content-title {
-			
-			width: 170px;
-			background-color: #E60012;
-			margin: 0 auto;
-			border-radius: 10px;
-			text-align: center;
-			line-height: 20px;
-			color: white;
-			margin-top: 10px;
-			
-			
-		}
-		
-		#sidebar-cart .title {
-			position: relative;
-		}
-		
-		#moreunfold {
-		
-			position: absolute;
-			bottom: 5px;
-			left: 50%;
-		}
-		
-		
-	</style>
+<style type="text/css">
+.menuaa>li>a {
+	display: block;
+	text-align: left;
+	line-height: 26px;
+	color: white;
+}
 
+.menuaa>li:nth-child(1)>a {
+	background: url("img/bgs.png") 0 -155px;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding-left: 30px;
+}
+
+.menuaa>li:nth-child(2)>a {
+	background: url("img/bgs.png") 0 -182px;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding-left: 30px;
+}
+
+.menuaa>li:nth-child(3)>a {
+	background: url("img/bgs.png") 0 -208px;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding-left: 30px;
+}
+
+.menuaa>li:nth-child(4)>a {
+	background: url("img/bgs.png") 0 -234px;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding-left: 30px;
+}
+
+.onea>li {
+	background-image: none;
+	width: 100%;
+	line-height: 21px;
+	font-size: 15px;
+	margin-left: 20px;
+}
+
+#sidebar-cart {
+	width: 184px;
+	background-color: #E60012;
+	border-radius: 20px;
+}
+
+#sidebar-cart .title {
+	margin-top: 5px;
+}
+
+#sidebar-cart .title>p:nth-child(1) {
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	cursor: pointer;
+}
+
+#sidebar-cart .title>p>i {
+	margin-right: 5px;
+}
+
+#sidebar-cart .cart-content {
+	width: 180px;
+	background-color: white;
+	margin: 0 auto;
+	border-radius: 10px;
+	margin-top: 5px;
+	overflow: hidden;
+	margin-top:10px;
+	display: none;
+	padding-bottom: 10px;
+}
+
+#sidebar-cart .cart-content .content-title {
+	width: 170px;
+	background-color: #E60012;
+	margin: 0 auto;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 20px;
+	color: white;
+	margin-top: 10px;
+}
+
+#sidebar-cart .title {
+	position: relative;
+}
+
+#moreunfold {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+}
+
+.cart-info>div>span:nth-child(1) {
+	float: left;
+	margin-left: 10px;
+	color: #6a3301;
+	font-size: 13px;
+	line-height: 160%;
+}
+
+.cart-info>div>span:nth-child(2) {
+	color: #6a3301;
+	float: right;
+	font-size: 13px;
+	margin-right: 10px;
+	line-height: 160%;
+}
+
+.enter-paypage>span {
+	display: block;
+	width: 116px;
+	height: 37px;
+	margin: 20px auto;
+	cursor: pointer;
+	background: url("img/bgs.png") -253px -195px;
+}
+
+.cartItem {
+	padding-left: 10px;
+	margin-top: 5px;
+}
+
+.cartItem>div {
+	float: left;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+.cartItem>div:nth-child(2) {
+	width: 40px;
+	font-size: 10px; overflow : hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.cartItem>div:nth-child(3) {
+	float: right;
+}
+
+#shou {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	cursor:pointer;
+	color:white;
+	font-weight: 700;
+	display: none;
+}
+
+#fang {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	cursor:pointer;
+	color:white;
+	font-weight: 700;
+}
+
+</style>
+
+<script type="text/javascript">
+	
+	function upCart(){
+		
+		$("#title").slideDown("slow");
+		$("#cart-detail").slideUp("slow");
+		$("#fang").show();
+		$("#shou").hide();
+		
+	}
+	
+	function downCart(){
+		
+		$("#title").slideUp("slow");
+		$("#cart-detail").slideDown("slow");
+		$("#fang").hide();
+		$("#shou").show();
+		
+	}
+	
+	function listProduct(categoryId){
+		
+		window.location="${pageContext.request.contextPath}/listProduct.action?categoryId="+categoryId;
+		
+	}
+	
+</script>
 </head>
 
 <body>
-	
+
 	<jsp:include page="header.jsp"></jsp:include>
-	
+
 	<div class="container-fluid ">
 		<div id="mycarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -479,13 +554,11 @@ a {
 				<div class="viewpager clearfix">
 					<img id="pic" src="img/pc-首页轮播－土鸡汤.jpg" alt="">
 				</div>
-	
+
 			</div>
 
 
 		</div>
-
-
 
 		<div class="sidebar-left">
 			<div class="sidebar-block">
@@ -499,44 +572,40 @@ a {
 
 								<c:forEach items="${hot }" var="h">
 
-									<li><a href="#">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
 
 								</c:forEach>
 
-							</ul>
-						</li>
+							</ul></li>
 
-						<li><a href="#">营养早餐  8:00-10:30</a>
+						<li><a href="#">营养早餐 8:00-10:30</a>
 							<ul class="onea">
 
 								<c:forEach items="${breakfast }" var="h">
 
-									<li><a href="#">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
 
 								</c:forEach>
 
-							</ul>
-						</li>
+							</ul></li>
 
-						<li><a href="#">丰富主食  10:30-22:00</a>
+						<li><a href="#">丰富主食 10:30-22:00</a>
 							<ul class="onea">
-								<c:forEach items="${dinner }" var="h">
+								<c:forEach items="${dinner}" var="h">
 
-									<li><a href="#">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
 
 								</c:forEach>
-							</ul>
-						</li>
+							</ul></li>
 
-						<li><a href="#">轻松下午茶  14:00-17:00</a>
+						<li><a href="#">轻松下午茶 14:00-17:00</a>
 							<ul class="onea">
 								<c:forEach items="${tea }" var="h">
 
-									<li><a href="#">${h.categoryname }</a></li>
+									<li><a href="javaScript:void(0);" onclick="listProduct('${h.categoryId}')">${h.categoryname }</a></li>
 
 								</c:forEach>
-							</ul>
-						</li>
+							</ul></li>
 					</ul>
 				</div>
 				<div class="bottom"></div>
@@ -545,37 +614,97 @@ a {
 
 		<!--购物车-->
 		<div id="sidebar-cart">
-			
-			<div class="title">
-				
-				<p><i class="iconfont icon-cart"></i>购物车</p>
-				
+
+			<div id="title" class="title">
+
+				<p onclick="downCart()">
+					<i class="iconfont icon-cart"></i>购物车
+				</p>
+
 			</div>
-			
-			<div class="cart-content">
-				
+
+			<i id="shou" onclick="upCart()" class="iconfont icon-less"></i>
+			<i id="fang" onclick="downCart()" class="iconfont icon-moreunfold"></i>
+
+
+			<div id="cart-detail" class="cart-content">
+
 				<div class="content-title">
 					<p>
-						<i class="iconfont icon-edit"></i>
-						订餐信息
+						<i class="iconfont icon-edit"></i> 订餐信息
 					</p>
 				</div>
-				
-				<p style="padding: 5px 10px;">下单<font color="red">45分钟</font>左右送达</p>
-				
-				<div >
-					
-					
-					
-					
+
+				<p style="padding: 5px 10px;">
+					下单<font color="red">45分钟</font>左右送达
+				</p>
+
+				<div class="cart-info">
+
+					<div class="clearfix">
+						<span>餐品总额:</span> <span>0元</span>
+					</div>
+
+					<div class="clearfix">
+						<span>优惠金额:</span> <span>0元</span>
+					</div>
+
+					<div class="clearfix">
+						<span>外送费:</span> <span>0元</span>
+					</div>
+
+					<div class="clearfix">
+						<span><font color="red">应付金额:</font></span> <span><font
+							color="red">0元</font></span>
+					</div>
+
 				</div>
-				
-			
+
+				<div class="enter-paypage">
+					<span></span>
+				</div>
+
+				<h2 style="padding: 5px 10px;">购物车详情</h2>
+
+
+				<div class="cartItem clearfix">
+
+					<div class="box-img">
+						<img src="img/logo.png" width="50px" height="50px">
+					</div>
+
+					<div class="box-name">真功夫asdfsdafsdafasdf</div>
+
+					<div class="box-price">
+						<font color="red">￥20.00</font>
+					</div>
+
+
+				</div>
+
+
+				<div class="cartItem">
+
+					<div class="box-img">
+						<img src="img/logo.png" width="50px" height="50px">
+					</div>
+
+					<div class="box-name">真功夫asdfsdafsdafasdf</div>
+
+					<div class="box-price">
+						<font color="red">￥20.00</font>
+					</div>
+
+
+				</div>
+
+
+
 			</div>
-			
-						
+
+
 		</div>
-		
+
 	</div>
 
 	<div class="tu">

@@ -1,0 +1,380 @@
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+/*会员中心*/
+        
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {	
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	position: relative;
+	width: 100%;
+	height: 78px;
+	border-bottom: 3px solid #E60012;
+
+}
+
+header .topcontent {
+	position: relative;
+	width: 1000px;
+	height: 78px;
+	margin: 0 auto;
+}
+
+header .topcontent>a>img {
+	position: absolute;
+	bottom: 15px;
+}
+header .topcontent>a>img:hover {
+	opacity: 0.75;
+}
+
+
+header .topcontent>.menu_location {
+	position: absolute;
+	margin-left: 175px;
+	margin-top: 40px;
+	width: 119px;
+	height: 20px;
+}
+
+header .topcontent>.menu_location>span {
+	position: absolute;
+	top: 0;
+	font-size: 14px;
+	text-align: center;
+	color: red;
+}
+
+header .topcontent>.menu_location>a {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	font-size: 13px;
+	background-image: url(../img/bgs.png);
+	background-position: -294px -4px;
+	width: 42px;
+	height: 20px;
+}
+
+header .topcontent>.menu_location>a:hover {
+	opacity: 0.75;
+}
+
+header .topcontent>.menu {
+	position: absolute;
+	width: 549px;
+	height: 29px;
+	right: 0;
+	bottom: 0;
+	background-color: #E60012;
+}
+
+header .topcontent>.menu>ul>.menu_pic {
+	width: 36px;
+	height: 29px;
+	background-image: url(../img/bgs.png);
+	background-position: -253px 0;
+}
+
+header .topcontent>.menu>ul>li {
+	position: relative;
+	width: 105px;
+	height: 26px;
+	float: left;
+	list-style: none;
+	margin-right: 14px;
+}
+
+	header .topcontent>.menu>ul>li>a:hover {
+		opacity: 0.75;
+	}
+
+header .topcontent>.menu>ul>li>a {
+	display: block;
+	width: 91px;
+	height: 26px;
+	line-height: 26px;
+	text-decoration: none;
+	font-size: 17px;
+	color: white;
+	text-align: center;
+}
+
+header .topcontent>.menu>ul>li>span {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 2px;
+	height: 17px;
+	background-color: #f39800;
+	display: block;
+}
+
+header .topcontent>#register {
+	position: absolute;
+	top: 15px;
+	right: 0;
+	color: #E60012;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+header .topcontent>.menu>ul>.menu_outside {
+	position: absolute;
+	right: -195px;
+	bottom: 0;
+	width: 200px;
+	height: 29px;
+	background-color: #E60012;
+}
+/*****************************************************************/
+
+section {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	border-bottom: 2px solid #E60012;
+}
+
+section .content {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+section .content>p {
+	position: relative;
+	margin: 20px auto;
+	font-size: 30px;
+	text-align: center;
+	color: red;
+}
+
+section .content>h4 {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 13px;
+	color: gray;
+}
+
+section .content .login_mass {
+	position: relative;
+	width: 350px;
+	height: 166px;
+	margin: 10px auto;
+}
+
+section .content .login_mass .from_item {
+	position: relative;
+	margin: 0px auto;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	width: 300px;
+	height: 31px;
+	/*				border: 1px solid royalblue;
+*/
+}
+
+section .content .login_mass>ul>a {
+	font-size: 11px;
+	color: red;
+	margin-left: 25px;
+}
+	section .content .login_mass>ul>a:hover {
+		opacity: 0.75;
+	}
+section .content .login_mass .from_item .pic_left {
+	position: absolute;
+	width: 9px;
+	height: 31px;
+	background-image: url(../img/buttons.jpg);
+	background-position: 0 -335px;
+}
+
+section .content .login_mass .from_item .pic_right {
+	position: absolute;
+	width: 9px;
+	height: 31px;
+	background-image: url(../img/buttons.jpg);
+	background-position: 0 -366px;
+	right: 10px;
+}
+
+section .content .login_mass .from_item .icon_div {
+	display: block;
+	position: absolute;
+	margin-left: 57px;
+	top: 0px;
+	width: 25px;
+	height: 29px;
+	border-bottom: 1px solid #6A3301;
+	border-top: 1px solid #6A3301;
+}
+
+section .content .login_mass .from_item>.icon_div>img {
+	position: relative;
+	margin-top: 5px;
+	height: 18px;
+}
+
+section .content .login_mass .from_item>input[type=text] {
+	position: absolute;
+	margin-left: 33px;
+	width: 200px;
+	height: 29px;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid #6A3301;
+	border-top: 1px solid #6A3301;
+}
+
+section .content .login_mass input[type=button] {
+	position: absolute;
+	bottom: 0;
+	margin-left: 130px;
+	width: 88px;
+	height: 31px;
+	border-style: none;
+	background-color: red;
+	color: white;
+	font-size: 15px;
+	border-radius: 8px;
+}
+	section .content .login_mass>a:hover{
+		opacity: 0.75;
+	}
+
+
+/**********************************************************************/
+
+footer {
+	width: 100%;
+	height: 184px;
+}
+
+footer .bottom_mean {
+	position: relative;
+	widows: 1000px;
+	height: 127px;
+	margin: 34px auto;
+}
+
+footer .bottom_mean>img{
+	position: absolute;
+	margin: auto 167px;
+}
+
+footer .bottom_right {
+	position: absolute;
+	width: 527px;
+	height: 88px;
+	
+	right: 195px;
+	top: 0;
+}
+
+footer .bottom_right>ul {
+	position: absolute;
+	right: 0;
+}
+
+footer .bottom_right>ul>li>a {
+	width: 119px;
+	height: 25px;
+	color: red;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+footer .bottom_right>ul>li {
+	list-style: none;
+	float: left;
+	margin-left: 25px;
+}
+footer .bottom_right>ul>li:hover {
+	opacity: 0.75;
+}
+
+
+footer .bottom_right>ul>li>a>i {
+	float: left;
+	margin-right: 2px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background-image: url(../img/bgs.png);
+}
+
+footer .bottom_right>ul>li:nth-of-type(1)>a>i {
+	background-position: 0 -127px;
+}
+
+footer .bottom_right>ul>li:nth-of-type(2)>a>i {
+	background-position: -25px -127px;
+}
+
+footer .bottom_right>ul>li:nth-of-type(3)>a>i {
+	background-position: -50px -127px;
+}
+
+
+
+
+footer .bottom_right .about{
+	position: absolute;
+	right: 0;
+	margin-top: 8px;
+	width: 200px;
+	height: 15px;
+
+}
+
+footer .bottom_right .about>ul>li{
+	float: left;
+	font-size: 13px;
+	list-style: none;
+	margin-right: 10px;
+	
+}
+
+footer .bottom_right .about>ul>li:hover{
+	opacity: 0.75;
+}
+
+footer .bottom_right .about>ul>li>a{
+       	color: #6A3301;
+}
+footer .bottom_right>.bottom_mass{
+    height: 37px;
+    width: 527px;
+    margin-top: 25px;
+}
+
+footer .bottom_right>.bottom_mass>p{
+	font-size: 10px;
+	float: right;
+	margin-top: 2px;
+	color: #6A3301;
+}
+	
