@@ -4,9 +4,38 @@
 <head>
 <meta charset="utf-8" />
 <title></title>
+<script src="js/jquery-1.12.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/login.css"
 	charset="UTF-8" />
 </head>
+
+<script type="text/javascript">
+	
+	function login(){
+		
+		var params = $("#form").serialize();  
+
+		//发送登陆请求
+		$.ajax({ 
+			url: "user/login.action",
+			data:params, 
+			type:'post',  
+            dataType:'json',  
+			success: function(data){  		
+				alert(data.message);
+				
+				if(data.message == "登陆成功!"){
+					
+					window.location = "index.action";
+					
+				}
+				
+			}
+		});
+		
+	}
+	
+</script>
 
 <body>
 	<header>
@@ -35,7 +64,7 @@
 			<p>欢迎登陆真功夫会员中心</p>
 			<h4>为保障你的账号安全，查看请先登陆</h4>
 			<div class="login_mass">
-				<form action="user/login.action" method="post">
+				<form id="form" method="post">
 
 					<div class="from_item">
 						<label>账号：</label> <b class="pic_left"></b>
@@ -43,7 +72,7 @@
 							<img src="img/account (1).png" />
 						</div>
 
-						<input type="text" name="phone" placeholder="默认手机号" /> <b class="pic_right"></b>
+						<input id="phone" type="text" name="phone" placeholder="默认手机号" /> <b class="pic_right"></b>
 
 					</div>
 					<div class="from_item">
@@ -51,14 +80,14 @@
 						<div class="icon_div">
 							<img src="img/隐藏可见.png" />
 						</div>
-						<input name="password" type="text" placeholder="请输入密码" /> <b class="pic_right"></b>
+						<input id="password" name="password" type="password" placeholder="请输入密码" /> <b class="pic_right"></b>
 
 					</div>
 					<ul>
 						<a style="color:black;text-decoration: none;" href="#">忘记密码？</a>
 						<a style="color:black;text-decoration: none;" href="javaScript:void(0);">注册新会员</a>
 					</ul>
-					<a href="javaScript:void(0);"><input type="button" id="login_btn" value="登录" /></a>
+					<a href="javaScript:void(0);"><input type="button" onclick="login()" id="login_btn" value="登录" /></a>
 				</form>
 			</div>
 
@@ -73,7 +102,7 @@
 			<div class="bottom_right">
 
 				<ul>
-					<li><a href="https://weibo.com/zhengongfu"><i></i>真功夫官方微博</a>
+					<li><a href="java"><i></i>真功夫官方微博</a>
 					</li>
 					<li><a href="http://www.zkungfu.com/login"><i></i>真功夫官方微信</a>
 					</li>

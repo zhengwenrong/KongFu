@@ -249,6 +249,17 @@ section .content .login_mass .from_item>input[type=text] {
 	border-top: 1px solid #6A3301;
 }
 
+section .content .login_mass .from_item>input[type=password] {
+	position: absolute;
+	margin-left: 33px;
+	width: 200px;
+	height: 29px;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid #6A3301;
+	border-top: 1px solid #6A3301;
+}
+
 section .content .login_mass input[type=button] {
 	position: absolute;
 	bottom: 0;

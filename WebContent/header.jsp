@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -31,10 +32,25 @@
         <div class="top-right">
 
             <div>
-
-                <span><a href="#">登录</a></span>
+                <span>
+                	<c:if test="${ empty user}">                	
+		                <a href="login.html">登录</a><span>
+                	</c:if>
+                	<c:if test="${ not empty user}">
+                		<i class="iconfont icon-mobilephone"></i>15018159367</span>
+                	</c:if>
+                
+                </span>
                 <span>|</span>
-                <span><a href="#">注册</a></span>
+                <span>
+                <c:if test="${empty user }">
+	                <a href="register.html">注册</a>
+                
+                </c:if>
+                <c:if test="${not empty user }">
+	                <a href="user/logout.action">注销</a>                
+                </c:if>
+                </span>
 
             </div>
             <div>

@@ -15,6 +15,8 @@ import org.wenrong.kongfu.utils.CheckPhoneUtils;
 import org.wenrong.kongfu.utils.MD5Utils;
 import org.wenrong.kongfu.utils.UUIDUtils;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -31,22 +33,26 @@ public class UserServiceImpl implements UserService {
 		createCriteria.andPhoneEqualTo(user.getPhone());
 		List<User> selectByExample = userMapper.selectByExample(example);
 		
-		if(selectByExample != null && selectByExample.size()==1) {
+		if(null == user.getPassword()) {
 			
-			User user2 = selectByExample.get(0);
-			user2.setPassword(null);
-			return user2;
-		}else {
-			
-			return new ResultPojo(ResultPojo.STATUS_ERROR,ResultPojo.RESULT_FAIL,"用户名或密码错误");
+			return new ResultPojo(ResultPojo.STATUS_SUCCESS, ResultPojo.RESULT_FAIL, "密码不能为空！");
 			
 		}
 		
+		if(selectByExample != null && selectByExample.size()==1) {
+			
+			User user2 = selectByExample.get(0);
+			
+			return user2;
+		}else {
+			
+			return new ResultPojo(ResultPojo.STATUS_SUCCESS, ResultPojo.RESULT_FAIL, "用户名或密码错误！");
+		}	
 	}
 
 	@Override
 	public void saveUser(User user) {
-
+	
 		user.setId(UUIDUtils.getRandomStr());
 		user.setPassword(MD5Utils.md5(user.getPassword()));
 		userMapper.insert(user);

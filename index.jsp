@@ -314,12 +314,7 @@ a {
 					$(this).find(".onea").slideDown().parent().siblings().find(
 							".onea").slideUp();
 
-				})
-
-		$(".menuaa li .onea li").click(function() {
-			alert("a")
-
-		})
+				});
 	});
 
 	var imgUrls = [ "img/pc-首页轮播－土鸡汤.jpg", "img/栗子焖土鸡饭猪骨汤套配西兰花.jpg",
