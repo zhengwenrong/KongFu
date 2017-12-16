@@ -607,7 +607,6 @@ a {
 			</div>
 		</div>
 
-		<!--购物车-->
 		<div id="sidebar-cart">
 
 			<div id="title" class="title">
@@ -618,8 +617,8 @@ a {
 
 			</div>
 
-			<i id="shou" onclick="upCart()" class="iconfont icon-less"></i>
-			<i id="fang" onclick="downCart()" class="iconfont icon-moreunfold"></i>
+			<i id="shou" onclick="upCart()" class="iconfont icon-less"></i> <i
+				id="fang" onclick="downCart()" class="iconfont icon-moreunfold"></i>
 
 
 			<div id="cart-detail" class="cart-content">
@@ -637,7 +636,7 @@ a {
 				<div class="cart-info">
 
 					<div class="clearfix">
-						<span>餐品总额:</span> <span>0元</span>
+						<span>餐品总额:</span> <span>${totalMomey }元</span>
 					</div>
 
 					<div class="clearfix">
@@ -645,22 +644,38 @@ a {
 					</div>
 
 					<div class="clearfix">
-						<span>外送费:</span> <span>0元</span>
+						<span>外送费:</span> <span> <c:if test="${not empty cart }">
+						5元		
+						</c:if> <c:if test="${empty cart }">
+						0元
+						</c:if>
+
+						</span>
+
+
+
 					</div>
 
 					<div class="clearfix">
 						<span><font color="red">应付金额:</font></span> <span><font
-							color="red">0元</font></span>
+							color="red"> <c:if test="${not empty cart }">
+							
+							${totalMomey + 5}元
+							
+							</c:if> <c:if test="${empty cart }">
+								0元
+							</c:if>
+
+						</font></span>
 					</div>
 
 				</div>
 
 				<div class="enter-paypage">
-					<a href="pay.action"><span></span></a>
+					<span onclick="window.location='pay.action'"></span>
 				</div>
 
 				<h2 style="padding: 5px 10px;">购物车详情</h2>
-
 
 				<c:forEach items="${cart}" var="cartItem">
 
@@ -684,6 +699,8 @@ a {
 
 
 		</div>
+		
+		
 
 	</div>
 

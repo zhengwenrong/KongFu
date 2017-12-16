@@ -1,6 +1,7 @@
 package org.wenrong.kongfu.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -8,8 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.wenrong.kongfu.pojo.Address;
 import org.wenrong.kongfu.pojo.Memu;
+import org.wenrong.kongfu.pojo.User;
+import org.wenrong.kongfu.service.AddressService;
 import org.wenrong.kongfu.service.MemuService;
 
 /**
@@ -22,6 +27,9 @@ public class CartController {
 
 	@Autowired
 	private MemuService memuService;
+	
+	@Autowired
+	private AddressService addressAervice;
 	
 	@RequestMapping("/addMemuToCart.action")
 	public String add2Cart(HttpServletRequest request,String memuid,String categoryId) {
@@ -78,18 +86,113 @@ public class CartController {
 	}
 	
 	@RequestMapping("/pay.action")
-	public String toPayPage (HttpServletRequest request) {
+	public String toPayPage (ModelMap map,HttpServletRequest request) {
+	
+		User user = (User) request.getSession().getAttribute("user");
+		List<Address> address = addressAervice.getUserAddressList(user.getId());
 		
-		Object attribute = request.getSession().getAttribute("user");
 		
-		if(attribute == null) {
+		map.put("addresss", address);
+		
+		return "clearing.jsp";
+
+	}
+	
+	@RequestMapping("/reducememu.action")
+	public String reduceMemu(HttpServletRequest request,String memuid){
+		
+		Map<Memu,Integer> cart = (Map<Memu, Integer>) request.getSession().getAttribute("cart");
+		Double money = (Double) request.getSession().getAttribute("totalMomey");
+		if(cart != null){
 			
-			return "login.html";
+			Memu memu = new Memu();
+			memu.setMemuid(memuid);
+			
+			Memu deleteMemu = null;
+			
+			for(Map.Entry<Memu, Integer> m : cart.entrySet()){
+				
+				if(memuid.equals(m.getKey().getMemuid())){
+					
+					Integer value = m.getValue();
+					value--;
+					
+					if(value<=0){
+						
+						deleteMemu = m.getKey();
+						
+					
+					}
+					
+					cart.put(m.getKey(), value);
+				}
+					
+			}
+			
+			if(deleteMemu != null){
+				
+				cart.remove(deleteMemu);
+			}
 			
 		}
 		
-		return "clearing.jsp";
+		money = getTotleMoney(cart);
+		request.getSession().setAttribute("totalMomey", money);
+
+			
+		return "pay.action";
 	}
 	
+	
+	@RequestMapping("/addmemu.action")
+	public String addMemu(HttpServletRequest request,String memuid){
+		
+		Map<Memu,Integer> cart = (Map<Memu, Integer>) request.getSession().getAttribute("cart");
+		Double money = (Double) request.getSession().getAttribute("totalMomey");
+		if(cart != null){
+			
+			Memu memu = new Memu();
+			memu.setMemuid(memuid);
+			
+			for(Map.Entry<Memu, Integer> m : cart.entrySet()){
+				
+				if(memuid.equals(m.getKey().getMemuid())){
+					
+					Integer value = m.getValue();
+					value++;		
+					cart.put(m.getKey(), value);
+				}
+					
+			}		
+			
+		}
+		
+		money = getTotleMoney(cart);
+		request.getSession().setAttribute("totalMomey", money);
+
+			
+		return "pay.action";
+	}
+	
+	
+	@RequestMapping("/deletememu.action")
+	public String deleteMemu(HttpServletRequest request,String memuid){
+		
+		Map<Memu,Integer> cart = (Map<Memu, Integer>) request.getSession().getAttribute("cart");
+		Double money = (Double) request.getSession().getAttribute("totalMomey");
+		
+		if(cart != null){
+			
+			Memu memu = new Memu();
+			memu.setMemuid(memuid);
+			
+			cart.remove(memu);
+			
+		}
+		money = getTotleMoney(cart);
+		request.getSession().setAttribute("totalMomey", money);
+			
+		return "pay.action";
+	}
 	
 }

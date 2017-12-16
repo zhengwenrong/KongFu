@@ -29,11 +29,11 @@ create table address(
 addressId varchar(50) primary key,
 city varchar(20) not null,
 plot varchar(255) not null,
- address varchar(255) not null,
- linkMan varchar(50),
- phone varchar(20),
- userId varchar(50),
- foreign key(userId) references user(id)
+address varchar(255) not null,
+linkMan varchar(50),
+phone varchar(20),
+userId varchar(50),
+foreign key(userId) references user(id)
 );
 
 create table category(

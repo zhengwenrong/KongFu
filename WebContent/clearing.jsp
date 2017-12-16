@@ -25,6 +25,22 @@
 				$("#newAddress").fadeIn("slow");
 			}
 			
+			function divide(memuid){
+				
+				window.location = "reducememu.action?memuid="+memuid;
+				
+			}
+			
+			function plus(memuid){
+				
+				window.location = "addmemu.action?memuid="+memuid;
+			}
+			
+			function deletem(memuid){
+				
+				window.location = "deletememu.action?memuid="+memuid;
+			}
+			
 		</script>
 	
 	</head>
@@ -79,18 +95,23 @@
 			</div>
 
 		</div>
-
-		<div class="address-list ww clearfix">
-
-			<ul>
-				<li>郑文荣</li>
-				<li>15018159367</li>
-				<li>家</li>
-				<li>江门市</li>
-				<li>广东省江门市蓬江区胜利路116号江门市工贸职业技术学校1栋710室</li>
-			</ul>
-
-		</div>
+		
+		<c:forEach items="${addresss }" var="address">
+	
+			<div class="address-list ww clearfix">
+				
+				<ul>
+					<li><input type="radio" name="addressId" value="${address.addressid }"></li>
+					<li>${address.linkman }</li>
+					<li>${address.phone }</li>
+					<li>${address.alias }</li>
+					<li>${address.city }</li>
+					<li>${address.plot }${address.address }</li>
+				</ul>
+	
+			</div>
+		
+		</c:forEach>
 
 		<div class="cart-outer ww">
 
@@ -126,11 +147,11 @@
 								${cartItem.key.memuname }×${cartItem.value }
 							</li>
 							<li>￥${cartItem.key.memuprice }</li>
-							<li><i id="divide"></i>${cartItem.value }<i id="plus"></i></li>
+							<li><i onclick="divide('${cartItem.key.memuid}')" id="divide"></i>${cartItem.value }<i onclick="plus('${cartItem.key.memuid}')" id="plus"></i></li>
 							<li>无优惠</li>
 							<li>￥${cartItem.key.memuprice*cartItem.value }</li>
 							<li>
-								<i id="delete"></i>
+								<i onclick="deletem('${cartItem.key.memuid}')" id="delete"></i>
 							</li>
 						</ul>
 	
@@ -169,6 +190,7 @@
 			</div>
 
 		</div>
+
 
 		<hr class="ww" style="margin-top: 20px;" />
 
@@ -218,40 +240,42 @@
 
 					<p>配送信息:</p>
 
+					<form action="saveaddress.action" method="post">
 					
-
+						
+				
 					<div class="alert-left clearfix">
-
+					
 						<div>
 							<label>送餐城市:</label>
-							<input type="button" value="江门市">
+							<input name="city" type="text" value="江门市">
 						</div>
 						<div>
 							<span>大厦名/小区名：</span>
-							<input placeholder="请输入关键字" id="keyword" type="text">
+							<input name="plot" placeholder="请输入关键字" id="keyword" type="text">
 							<p>缩短或者更改大厦名/小区名的关键字进行查询，</p>
 							<p>例:将“虹桥路2号”改为“虹桥”。</p>
 						</div>
 						<div>
 							<label>详细地址：</label>
-							<input placeholder="请继续补全,例如3单元1011室" type="input"><br>
+							<input name="address" placeholder="请继续补全,例如3单元1011室" type="input"><br>
 						</div>
 					</div>
 					<div class="alert-right clearfix">
 
 						<div>
 							<label>联系人:</label>
-							<input type="button" value="江门市">
+							<input name="linkman" placeholder="请输入联系人" id="keyword" type="text">
 						</div>
 						<div>
 							<span>手机号码:</span>
-							<input placeholder="请输入关键字" id="keyword" type="text">
+							<input name="phone" placeholder="请输入手机号码" id="keyword" type="text">
 							<p>您的手机号码用于订餐联系</p>
 					
 						</div>
 						<div>
 							<label>地址别名</label>
-							<input placeholder="请继续补全,例如3单元1011室" type="input"><br>
+							<input name="alias" placeholder="请输入地址别名" type="input"><br>
 							<p>设置一个易记的名称，如：“家”，“公司”</p>
 						</div>
 					</div>
@@ -260,6 +284,8 @@
 						
 						<input type="submit" value="保存地址"/>
 					</div>
+					
+					</form>
 					
 				</div>
 

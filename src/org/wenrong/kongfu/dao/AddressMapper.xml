@@ -9,6 +9,7 @@
     <result column="linkMan" property="linkman" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="userId" property="userid" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    addressId, city, plot, address, linkMan, phone, userId
+    addressId, city, plot, address, linkMan, phone, userId, alias
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="org.wenrong.kongfu.pojo.AddressExample" >
     select
@@ -104,10 +105,10 @@
   <insert id="insert" parameterType="org.wenrong.kongfu.pojo.Address" >
     insert into address (addressId, city, plot, 
       address, linkMan, phone, 
-      userId)
+      userId, alias)
     values (#{addressid,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{plot,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR}, #{linkman,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{userid,jdbcType=VARCHAR})
+      #{userid,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="org.wenrong.kongfu.pojo.Address" >
     insert into address
@@ -133,6 +134,9 @@
       <if test="userid != null" >
         userId,
       </if>
+      <if test="alias != null" >
+        alias,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="addressid != null" >
@@ -155,6 +159,9 @@
       </if>
       <if test="userid != null" >
         #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        #{alias,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -188,6 +195,9 @@
       <if test="record.userid != null" >
         userId = #{record.userid,jdbcType=VARCHAR},
       </if>
+      <if test="record.alias != null" >
+        alias = #{record.alias,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +211,8 @@
       address = #{record.address,jdbcType=VARCHAR},
       linkMan = #{record.linkman,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
-      userId = #{record.userid,jdbcType=VARCHAR}
+      userId = #{record.userid,jdbcType=VARCHAR},
+      alias = #{record.alias,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +238,9 @@
       <if test="userid != null" >
         userId = #{userid,jdbcType=VARCHAR},
       </if>
+      <if test="alias != null" >
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
     </set>
     where addressId = #{addressid,jdbcType=VARCHAR}
   </update>
@@ -237,7 +251,8 @@
       address = #{address,jdbcType=VARCHAR},
       linkMan = #{linkman,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      userId = #{userid,jdbcType=VARCHAR}
+      userId = #{userid,jdbcType=VARCHAR},
+      alias = #{alias,jdbcType=VARCHAR}
     where addressId = #{addressid,jdbcType=VARCHAR}
   </update>
 </mapper>

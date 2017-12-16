@@ -15,6 +15,8 @@ public class Address {
 
     private String userid;
 
+    private String alias;
+
     public String getAddressid() {
         return addressid;
     }
@@ -69,5 +71,13 @@ public class Address {
 
     public void setUserid(String userid) {
         this.userid = userid == null ? null : userid.trim();
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias == null ? null : alias.trim();
     }
 }

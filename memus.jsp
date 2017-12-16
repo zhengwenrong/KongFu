@@ -723,7 +723,7 @@ a {
 				</div>
 
 				<div class="enter-paypage">
-					<span onclick="enterPayPage()"></span>
+					<span onclick="window.location='pay.action'"></span>
 				</div>
 
 				<h2 style="padding: 5px 10px;">购物车详情</h2>
