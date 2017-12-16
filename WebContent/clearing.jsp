@@ -79,6 +79,10 @@
 
 		</div>
 
+		<form action="commitOrder.action" method="post">
+		
+		
+
 		<div class="time ww">
 
 			<p>送餐时间：成功提交订单后，预计
@@ -222,6 +226,8 @@
 			<p style="margin-top: 10px; text-align: right;">点击"提交订单"后，您的订单会立即下到我们的餐厅开始制作食品，因此我们将无法接受修改或取消订单 ，请提交前仔细核对订单内容。</p>
 
 		</div>
+
+		</form>
 
 		<!-- 新建地址 -->
 		<div id="newAddress" class="alert-newaddress">

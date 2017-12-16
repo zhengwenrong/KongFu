@@ -36,6 +36,14 @@ public class AddressServiceImpl implements AddressService {
 		return selectByExample;
 	}
 
+	@Override
+	public Address getAddressById(String id) {
+
+		Address address = mapper.selectByPrimaryKey(id);
+	
+		return address;
+	}
+
 	
 	
 }

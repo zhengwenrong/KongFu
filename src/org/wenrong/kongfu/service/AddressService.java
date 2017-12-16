@@ -17,4 +17,11 @@ public interface AddressService {
 	 */
 	public List<Address> getUserAddressList(String userId);
 	
+	/**
+	 * 通过地址id获取地址
+	 * @param id
+	 * @return
+	 */
+	public Address getAddressById(String id);
+	
 }

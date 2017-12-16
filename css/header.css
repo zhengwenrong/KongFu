@@ -130,13 +130,13 @@
 	margin-left: 2px;
 }
 
-.active:hover {
+.active1:hover {
 	
 	background-color: #F8BFC3;
 	
 }
 
-.active {
+.active1 {
 	
 	background-color: #fff;
 	border-radius: 3px;

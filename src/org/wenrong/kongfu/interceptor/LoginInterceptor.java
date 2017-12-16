@@ -30,7 +30,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 		String requestURI = request.getRequestURI();
 		
-		if(requestURI.contains("pay.action")){
+		if(requestURI.contains("pay.action")||requestURI.contains("ordercenter.action")||requestURI.contains("vipcenter.action")){
 			
 			Object attribute = request.getSession().getAttribute("user");
 			

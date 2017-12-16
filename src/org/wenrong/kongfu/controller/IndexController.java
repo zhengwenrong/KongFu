@@ -32,6 +32,8 @@ public class IndexController {
 		map.put("dinner", allCategory.get("丰富主食"));
 		map.put("tea", allCategory.get("轻松下午茶"));
 		
+		map.put("currentPage", "index");
+		
 		return "index.jsp";
 	}
 	

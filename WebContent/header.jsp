@@ -57,10 +57,35 @@
 
                 <ul>
                     <li></li>
-                    <li class="active"><a class="activeA" href="#">首页</a></li>
-                    <li><a href="#">订单中心</a></li>
-                    <li><a href="#">会员中心</a></li>
-                    <li><a href="#">帮助中心</a></li>
+       
+                    <c:if test="${currentPage eq 'index' }">
+                    	  <li class="active1"><a class="activeA" href="index.action">首页</a></li>
+                    </c:if>
+                     <c:if test="${currentPage ne 'index' }">
+                    	  <li><a href="index.action">首页</a></li>
+                    </c:if>
+                    
+                    <c:if test="${currentPage eq 'ordercenter' }">
+                   	 	<li class="active1"><a class="activeA" href="ordercenter.action">订单中心</a></li>
+                    </c:if>
+                    <c:if test="${currentPage ne 'ordercenter' }">
+                    	<li><a href="ordercenter.action">订单中心</a></li>
+                    </c:if>
+                    
+                    <c:if test="${currentPage eq 'vipcenter' }">
+                    	<li class="active1"><a class="activeA" href="vipcenter.action">会员中心</a></li>
+                    </c:if>
+                    <c:if test="${currentPage ne 'vipcenter' }">
+                    	<li><a href="vipcenter.action">会员中心</a></li>
+                    </c:if>
+                    
+                    <c:if test="${currentPage eq 'helpcenter' }">
+                    	<li class="active1"><a class="activeA" href="helpcenter.action">帮助中心</a></li>
+                    </c:if>
+            		<c:if test="${currentPage ne 'helpcenter' }">
+                    	<li><a href="helpcenter.action">帮助中心</a></li>
+                    </c:if>
+                                                     
                 </ul>
 
             </div>
