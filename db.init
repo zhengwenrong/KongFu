@@ -48,6 +48,8 @@ create table orders (
 	ordertime datetime,
 	receiverinfo varchar(255),
 	paystatus int,
+	linkman varchar(50),
+	phone varchar(20),
 	user_id varchar(50),
 	foreign key(user_id) references user(id) 
 );
@@ -56,7 +58,7 @@ create table orderItem (
 	order_id varchar(50),
 	memu_id varchar(50),
 	buynum int,
-	foreign key(order_id) references order(id),
+	foreign key(order_id) references orders(id),
 	foreign key(memu_id) references memu(memuId)
 	
 );

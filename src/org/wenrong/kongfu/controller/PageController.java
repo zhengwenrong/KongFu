@@ -41,7 +41,7 @@ public class PageController {
 	
 	@RequestMapping("/vipcenter.action")
 	public String toVipCenter(ModelMap map) {
-		map.put("currentPage", "vipcenter");
+		map.put("currentPage", "vipcenter");	
 		return "VIPcenter.jsp";
 	}
 	

@@ -26,7 +26,7 @@ public class OrderController {
 		
 		service.saveOrder(addressId, cart, user.getId());
 		
-		return "index.action";
+		return "redirect:ordercenter.action";
 	}
 	
 }

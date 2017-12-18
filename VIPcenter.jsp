@@ -354,8 +354,8 @@
 						<div class="info">
 							
 							<ul>
-								<li>姓名:李金鹏</li>
-								<li>手机:13116945132</li>
+								<li>姓名:${user.phone }</li>
+								<li>手机:${user.phone }</li>
 								<li>可兑换积分:0<a herf="javaScript:void(0);">兑换好礼</a>`</li>
 								<li>账户余额： ￥0<a herf="javaScript:void(0);">充值</a></li>
 								<li><a herf="javaScript:void(0);">查看/完善个人信息</a>新会员完善个人信息,赠送200积分!</li>

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : wenrontg
+Source Server         : localhost
 Source Server Version : 50022
 Source Host           : localhost:3306
 Source Database       : kongfu
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2017-12-15 16:17:59
+Date: 2017-12-17 09:59:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,6 +27,7 @@ CREATE TABLE `address` (
   `linkMan` varchar(50) default NULL,
   `phone` varchar(20) default NULL,
   `userId` varchar(50) default NULL,
+  `alias` varchar(255) default NULL,
   PRIMARY KEY  (`addressId`),
   KEY `userId` (`userId`),
   CONSTRAINT `address_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`)
@@ -35,6 +36,8 @@ CREATE TABLE `address` (
 -- ----------------------------
 -- Records of address
 -- ----------------------------
+INSERT INTO `address` VALUES ('45e353525b20452599d35d01c77e909c', '江门市', '江门职业技术学院', '1栋705', '郑文荣', '15018159367', 'a93c59ab1ab34a40a1e543b6163e3016', '学校');
+INSERT INTO `address` VALUES ('a3fbc5d6e0b141cb9519f683edffec6a', '江门市', '蓬江区江门职业技术学院', '1栋705室', '郑文荣', '15018159367', 'd90acab781024078b96e2e06e7cbfa22', '学校');
 
 -- ----------------------------
 -- Table structure for category
@@ -222,6 +225,54 @@ INSERT INTO `memu` VALUES ('fb3b0cc02d194af986f3f32d6cc6168f', '鲜美蔬菜粥'
 INSERT INTO `memu` VALUES ('fc7391ee447d4dfb8f71986cbab0871b', '肉丸猪肝粥', '7', 'uploadMemuImg/39cc4cc6c2fe4652b46726d11b5a48fb.jpg', '9');
 
 -- ----------------------------
+-- Table structure for orderitem
+-- ----------------------------
+DROP TABLE IF EXISTS `orderitem`;
+CREATE TABLE `orderitem` (
+  `order_id` varchar(50) default NULL,
+  `memu_id` varchar(50) default NULL,
+  `buynum` int(11) default NULL,
+  KEY `order_id` (`order_id`),
+  KEY `memu_id` (`memu_id`),
+  CONSTRAINT `orderitem_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  CONSTRAINT `orderitem_ibfk_2` FOREIGN KEY (`memu_id`) REFERENCES `memu` (`memuId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of orderitem
+-- ----------------------------
+INSERT INTO `orderitem` VALUES ('ffcecf028996475ab4594b705cbbbe2a', '0f7c02aef3ef4926a105b813b0442c5f', '1');
+INSERT INTO `orderitem` VALUES ('ad7917234466497b89c09e551bf5864d', '8e053f34b7d348768b6f82d807633ed6', '7');
+INSERT INTO `orderitem` VALUES ('951667ec5b7242da998ff1004c972c70', '3d3dda2b59d94fb39fbea64b7c5324df', '1');
+INSERT INTO `orderitem` VALUES ('951667ec5b7242da998ff1004c972c70', 'b58b33a069d448e792d568444d884264', '1');
+INSERT INTO `orderitem` VALUES ('951667ec5b7242da998ff1004c972c70', 'a19cb4bd2f6d45d8a90ab360f4d9b60f', '1');
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `id` varchar(50) NOT NULL,
+  `money` double default NULL,
+  `ordertime` datetime default NULL,
+  `receiverinfo` varchar(255) default NULL,
+  `paystatus` int(11) default NULL,
+  `linkman` varchar(50) default NULL,
+  `phone` varchar(20) default NULL,
+  `user_id` varchar(50) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of orders
+-- ----------------------------
+INSERT INTO `orders` VALUES ('951667ec5b7242da998ff1004c972c70', '69', '2017-12-17 08:37:48', '江门市蓬江区江门职业技术学院1栋705室', '0', '郑文荣', '15018159367', 'd90acab781024078b96e2e06e7cbfa22');
+INSERT INTO `orders` VALUES ('ad7917234466497b89c09e551bf5864d', '28', '2017-12-17 08:29:57', '江门市江门职业技术学院1栋705', '0', '郑文荣', '15018159367', 'a93c59ab1ab34a40a1e543b6163e3016');
+INSERT INTO `orders` VALUES ('ffcecf028996475ab4594b705cbbbe2a', '18', '2017-12-16 22:56:50', '江门市蓬江区江门职业技术学院1栋705室', '0', '郑文荣', '15018159367', 'd90acab781024078b96e2e06e7cbfa22');
+
+-- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
@@ -243,4 +294,5 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('20d7025b4ec34484b237d2a9965ecd65', '15018159367', '123', '文荣', '男', '2017-12-01', '234', '广东', '阳江', '清淡-浓重-滋补', '鲁菜-苏菜-闽菜');
+INSERT INTO `user` VALUES ('a93c59ab1ab34a40a1e543b6163e3016', '15018159366', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('d90acab781024078b96e2e06e7cbfa22', '17727044202', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, null, null, null);

@@ -105,7 +105,7 @@
 			<div class="address-list ww clearfix">
 				
 				<ul>
-					<li><input type="radio" name="addressId" value="${address.addressid }"></li>
+					<li><input type="radio" checked="checked" name="addressId" value="${address.addressid }"></li>
 					<li>${address.linkman }</li>
 					<li>${address.phone }</li>
 					<li>${address.alias }</li>
